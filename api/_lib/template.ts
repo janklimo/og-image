@@ -16,7 +16,9 @@ const mono = readFileSync(`${__dirname}/../_fonts/Vera-Mono.woff2`).toString(
   "base64"
 );
 
-const avatarSrc = "https://www.klimo.io/images/profile_pic_large.jpg";
+const avatar = readFileSync(`${__dirname}/../_images/avatar.jpg`).toString(
+  "base64"
+);
 
 function getCss(theme: string, fontSize: string) {
   let foreground = "black";
@@ -135,7 +137,7 @@ function getImage(width = "auto", height = "380") {
   return `<img
         class="logo"
         alt="Generated Image"
-        src="${avatarSrc}"
+        src="data:image/jpeg;charset=utf-8;base64,${avatar}"
         width="${sanitizeHtml(width)}"
         height="${sanitizeHtml(height)}"
     />`;
