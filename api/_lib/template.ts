@@ -101,6 +101,7 @@ export function getHtml(parsedReq: ParsedRequest) {
               md ? marked(text) : sanitizeHtml(text)
             )}
             </div>
+            <p>🎉</p>
         </div>
     </body>
 </html>`;
