@@ -1,10 +1,10 @@
 <html>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <title>Generated Image</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {
-      font-family: 'PT Sans', sans-serif;
+      font-family: "PT Sans", sans-serif;
       background: #fefefe;
       height: 100vh;
       display: flex;
@@ -23,19 +23,24 @@
 
     .avatar {
       border-radius: 50%;
-      margin: 1rem auto;
+      margin: 2rem auto;
     }
 
     .wrapper {
-      margin: 150px;
+      margin: 150px 250px;
       width: 100%;
     }
 
     .heading {
       font-size: 100px;
       font-weight: 700;
+      text-align: left;
       color: #424242;
       line-height: 1.8;
+    }
+
+    .site-title-wrapper {
+      margin-bottom: 65px;
     }
 
     .site-title {
@@ -47,19 +52,37 @@
       color: #ffffff;
       padding: 11px 18px;
     }
+
+    .new-blog-post {
+      color: #aeadad;
+      font-size: 35px;
+    }
   </style>
 
   <body>
     <div class="wrapper">
-      <span class="site-title">Klimo.io</span>
-      <div class="avatar-wrapper">
-        <img class="avatar" alt="Generated Image"
-                            src="../api/_images/avatar.jpg"
-                            width="${sanitizeHtml(width)}"
-                            height="${sanitizeHtml(height)}" />
+      <div class="site-title-wrapper">
+        <span class="site-title">Klimo.io</span>
       </div>
+      <div class="avatar-wrapper">
+        <img
+          class="avatar"
+          alt="Generated Image"
+          src="../api/_images/avatar.jpg"
+          width="350"
+        />
+      </div>
+      <p class="new-blog-post">
+        New blog post
+        <img
+          class="tada"
+          alt="Party popper"
+          src="../api/_images/tada.png"
+          width="30"
+        />
+      </p>
       <div class="heading">
-        My blog post title 🎉
+        My blog post title
       </div>
     </div>
   </body>
