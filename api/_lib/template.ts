@@ -1,4 +1,6 @@
 import { readFileSync } from "fs";
+import { ParsedRequest } from "./types";
+import { sanitizeHtml } from "./sanitizer";
 
 const regular = readFileSync(
   `${__dirname}/../_fonts/pt-sans-regular.woff2`
@@ -86,7 +88,9 @@ function getCss() {
     }`;
 }
 
-export function getHtml() {
+export function getHtml(parsedReq: ParsedRequest) {
+  const { text } = parsedReq;
+
   return `<!DOCTYPE html>
 <html>
     <meta charset="utf-8">
@@ -107,9 +111,7 @@ export function getHtml() {
           New blog post
           ${getEmoji()}
         </p>
-        <div class="heading">
-          My blog post title
-        </div>
+        <div class="heading">${sanitizeHtml(text)}</div>
       </div>
     </body>
 </html>`;
