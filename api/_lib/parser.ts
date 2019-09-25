@@ -13,13 +13,17 @@ export function parseRequest(req: IncomingMessage) {
     theme,
     md,
     tags,
-    description
+    description,
+    time,
+    date
   } = query;
 
   if (
     Array.isArray(fontSize) ||
     Array.isArray(tags) ||
-    Array.isArray(description)
+    Array.isArray(description) ||
+    Array.isArray(time) ||
+    Array.isArray(date)
   ) {
     throw new Error("Expected a singular param.");
   }
@@ -44,6 +48,8 @@ export function parseRequest(req: IncomingMessage) {
     fontSize: fontSize || "96px",
     tags: tags ? tags.split(",") : [],
     description,
+    time,
+    date,
     images: getArray(images),
     widths: getArray(widths),
     heights: getArray(heights)

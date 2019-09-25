@@ -114,7 +114,7 @@ function getCss() {
 }
 
 export function getHtml(parsedReq: ParsedRequest) {
-  const { text, description, tags } = parsedReq;
+  const { text, description, tags, time, date } = parsedReq;
 
   return `<!DOCTYPE html>
 <html>
@@ -132,7 +132,7 @@ export function getHtml(parsedReq: ParsedRequest) {
         <div class="avatar-wrapper">
           ${getImage()}
         </div>
-        <p class="meta">SEPTEMBER 17, 2019 • 2 MIN READ</p>
+        <p class="meta">${date} • ${time} MIN READ</p>
         <div class="heading">${sanitizeHtml(text)}</div>
         <p class="description">${sanitizeHtml(description)}</p>
         ${renderTags(tags)}

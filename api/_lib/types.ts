@@ -12,4 +12,6 @@ export interface ParsedRequest {
   widths: string[];
   heights: string[];
   description: string;
+  date: string;
+  time: string;
 }
