@@ -5,13 +5,23 @@ import { ParsedRequest, Theme } from "./types";
 export function parseRequest(req: IncomingMessage) {
   console.log("HTTP " + req.url);
   const { pathname = "/", query = {} } = parse(req.url || "", true);
-  const { fontSize, images, widths, heights, theme, md } = query;
+  const {
+    fontSize,
+    images,
+    widths,
+    heights,
+    theme,
+    md,
+    tags,
+    description
+  } = query;
 
-  if (Array.isArray(fontSize)) {
-    throw new Error("Expected a single fontSize");
-  }
-  if (Array.isArray(theme)) {
-    throw new Error("Expected a single theme");
+  if (
+    Array.isArray(fontSize) ||
+    Array.isArray(tags) ||
+    Array.isArray(description)
+  ) {
+    throw new Error("Expected a singular param.");
   }
 
   const arr = pathname.slice(1).split(".");
@@ -32,6 +42,8 @@ export function parseRequest(req: IncomingMessage) {
     theme: theme === "dark" ? "dark" : "light",
     md: md === "1" || md === "true",
     fontSize: fontSize || "96px",
+    tags: tags.split(","),
+    description,
     images: getArray(images),
     widths: getArray(widths),
     heights: getArray(heights)

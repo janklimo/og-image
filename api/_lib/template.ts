@@ -108,12 +108,13 @@ function getCss() {
       background: #4cc2f1;
       padding: 11px 18px;
       font-weight: bold;
+      margin-right: 20px;
     }
     `;
 }
 
 export function getHtml(parsedReq: ParsedRequest) {
-  const { text } = parsedReq;
+  const { text, description, tags } = parsedReq;
 
   return `<!DOCTYPE html>
 <html>
@@ -133,20 +134,21 @@ export function getHtml(parsedReq: ParsedRequest) {
         </div>
         <p class="meta">SEPTEMBER 17, 2019 • 2 MIN READ</p>
         <div class="heading">${sanitizeHtml(text)}</div>
-        <p class="description">An easy way to find out current MRR of your Shopify app.</p>
-        <div class="tags-container">
-          <span class="tag">Ruby on Rails</span>
-        </div>
+        <p class="description">${sanitizeHtml(description)}</p>
+        ${renderTags(tags)}
       </div>
     </body>
 </html>`;
 }
 
-function getImage() {
-  return `<img
-        class="avatar"
+const getImage = () =>
+  `<img class="avatar"
         alt="Generated Image"
         src="data:image/jpeg;charset=utf-8;base64,${avatar}"
-        width="300"
-    />`;
-}
+        width="300" />`;
+
+const renderTags = (tags: string[]) => {
+  return `<div class="tags-container">
+            ${tags.map(tag => `<span class="tag">${tag}</span>`).join("")}
+          </div>`;
+};
