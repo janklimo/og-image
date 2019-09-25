@@ -42,7 +42,7 @@ export function parseRequest(req: IncomingMessage) {
     theme: theme === "dark" ? "dark" : "light",
     md: md === "1" || md === "true",
     fontSize: fontSize || "96px",
-    tags: tags.split(","),
+    tags: tags ? tags.split(",") : [],
     description,
     images: getArray(images),
     widths: getArray(widths),
