@@ -49,16 +49,16 @@ function getCss() {
 
     .avatar {
       border-radius: 50%;
-      margin: 2rem auto 4.5rem;
+      margin: 0.5rem auto 2rem;
     }
 
     .wrapper {
-      margin: 100px 250px;
+      margin: 40px;
       width: 100%;
     }
 
     .heading {
-      font-size: 105px;
+      font-size: 65px;
       font-weight: 700;
       text-align: left;
       color: #424242;
@@ -66,11 +66,11 @@ function getCss() {
     }
 
     .site-title-wrapper {
-      margin-bottom: 65px;
+      margin-bottom: 45px;
     }
 
     .site-title {
-      font-size: 50px;
+      font-size: 30px;
       font-weight: 700;
       margin: 0;
       text-transform: uppercase;
@@ -83,16 +83,16 @@ function getCss() {
       text-align: left;
       text-transform: uppercase;
       color: #f75175;
-      font-size: 36px;
+      font-size: 24px;
       margin: 0;
     }
 
     .description {
       text-align: left;
       color: #aeadad;
-      font-size: 46px;
+      font-size: 28px;
       margin: 14px 0;
-      padding-bottom: 60px;
+      padding-bottom: 40px;
       border-bottom: 1px dotted #f75175;
     }
 
@@ -102,7 +102,7 @@ function getCss() {
     }
 
     .tag {
-      font-size: 32px;
+      font-size: 26px;
       color: white;
       text-transform: uppercase;
       background: #4cc2f1;
@@ -145,7 +145,7 @@ const getImage = () =>
   `<img class="avatar"
         alt="Generated Image"
         src="data:image/jpeg;charset=utf-8;base64,${avatar}"
-        width="300" />`;
+        width="200" />`;
 
 const renderTags = (tags: string[]) => {
   return `<div class="tags-container">
