@@ -58,7 +58,7 @@ function getCss() {
     }
 
     .heading {
-      font-size: 65px;
+      font-size: 68px;
       font-weight: 700;
       text-align: left;
       color: #424242;
@@ -89,8 +89,8 @@ function getCss() {
 
     .description {
       text-align: left;
-      color: #aeadad;
-      font-size: 28px;
+      color: #5d5d5d;
+      font-size: 30px;
       margin: 14px 0;
       padding-bottom: 40px;
       border-bottom: 1px dotted #f75175;
