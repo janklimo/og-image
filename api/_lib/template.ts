@@ -12,24 +12,21 @@ const bold = readFileSync(`${__dirname}/../_fonts/pt-sans-bold.woff2`).toString(
 const avatar = readFileSync(`${__dirname}/../_images/avatar.jpg`).toString(
   "base64"
 );
-const tada = readFileSync(`${__dirname}/../_images/tada.png`).toString(
-  "base64"
-);
 
 function getCss() {
   return `
     @font-face {
-        font-family: 'PT Sans';
-        font-style:  normal;
-        font-weight: normal;
-        src: url(data:font/woff2;charset=utf-8;base64,${regular}) format('woff2');
+      font-family: 'PT Sans';
+      font-style:  normal;
+      font-weight: normal;
+      src: url(data:font/woff2;charset=utf-8;base64,${regular}) format('woff2');
     }
 
     @font-face {
-        font-family: 'PT Sans';
-        font-style:  normal;
-        font-weight: bold;
-        src: url(data:font/woff2;charset=utf-8;base64,${bold}) format('woff2');
+      font-family: 'PT Sans';
+      font-style:  normal;
+      font-weight: bold;
+      src: url(data:font/woff2;charset=utf-8;base64,${bold}) format('woff2');
     }
 
     body {
@@ -52,16 +49,16 @@ function getCss() {
 
     .avatar {
       border-radius: 50%;
-      margin: 2rem auto;
+      margin: 2rem auto 4.5rem;
     }
 
     .wrapper {
-      margin: 150px 250px;
+      margin: 100px 250px;
       width: 100%;
     }
 
     .heading {
-      font-size: 100px;
+      font-size: 105px;
       font-weight: 700;
       text-align: left;
       color: #424242;
@@ -73,7 +70,7 @@ function getCss() {
     }
 
     .site-title {
-      font-size: 55px;
+      font-size: 50px;
       font-weight: 700;
       margin: 0;
       text-transform: uppercase;
@@ -82,10 +79,37 @@ function getCss() {
       padding: 11px 18px;
     }
 
-    .new-blog-post {
+    .meta {
+      text-align: left;
+      text-transform: uppercase;
+      color: #f75175;
+      font-size: 36px;
+      margin: 0;
+    }
+
+    .description {
+      text-align: left;
       color: #aeadad;
-      font-size: 40px;
-    }`;
+      font-size: 46px;
+      margin: 14px 0;
+      padding-bottom: 60px;
+      border-bottom: 1px dotted #f75175;
+    }
+
+    .tags-container {
+      text-align: left;
+      padding: 30px 0;
+    }
+
+    .tag {
+      font-size: 32px;
+      color: white;
+      text-transform: uppercase;
+      background: #4cc2f1;
+      padding: 11px 18px;
+      font-weight: bold;
+    }
+    `;
 }
 
 export function getHtml(parsedReq: ParsedRequest) {
@@ -107,11 +131,12 @@ export function getHtml(parsedReq: ParsedRequest) {
         <div class="avatar-wrapper">
           ${getImage()}
         </div>
-        <p class="new-blog-post">
-          New blog post
-          ${getEmoji()}
-        </p>
+        <p class="meta">SEPTEMBER 17, 2019 • 2 MIN READ</p>
         <div class="heading">${sanitizeHtml(text)}</div>
+        <p class="description">An easy way to find out current MRR of your Shopify app.</p>
+        <div class="tags-container">
+          <span class="tag">Ruby on Rails</span>
+        </div>
       </div>
     </body>
 </html>`;
@@ -122,15 +147,6 @@ function getImage() {
         class="avatar"
         alt="Generated Image"
         src="data:image/jpeg;charset=utf-8;base64,${avatar}"
-        width="350"
-    />`;
-}
-
-function getEmoji() {
-  return `<img
-        class="tada"
-        alt="Party popper"
-        src="data:image/png;charset=utf-8;base64,${tada}"
-        width="30"
+        width="300"
     />`;
 }

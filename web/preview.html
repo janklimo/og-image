@@ -23,16 +23,16 @@
 
     .avatar {
       border-radius: 50%;
-      margin: 2rem auto;
+      margin: 2rem auto 4.5rem;
     }
 
     .wrapper {
-      margin: 150px 250px;
+      margin: 100px 250px;
       width: 100%;
     }
 
     .heading {
-      font-size: 100px;
+      font-size: 105px;
       font-weight: 700;
       text-align: left;
       color: #424242;
@@ -44,7 +44,7 @@
     }
 
     .site-title {
-      font-size: 55px;
+      font-size: 50px;
       font-weight: 700;
       margin: 0;
       text-transform: uppercase;
@@ -53,9 +53,35 @@
       padding: 11px 18px;
     }
 
-    .new-blog-post {
+    .meta {
+      text-align: left;
+      text-transform: uppercase;
+      color: #f75175;
+      font-size: 36px;
+      margin: 0;
+    }
+
+    .description {
+      text-align: left;
       color: #aeadad;
-      font-size: 35px;
+      font-size: 46px;
+      margin: 14px 0;
+      padding-bottom: 60px;
+      border-bottom: 1px dotted #f75175;
+    }
+
+    .tags-container {
+      text-align: left;
+      padding: 30px 0;
+    }
+
+    .tag {
+      font-size: 32px;
+      color: white;
+      text-transform: uppercase;
+      background: #4cc2f1;
+      padding: 11px 18px;
+      font-weight: bold;
     }
   </style>
 
@@ -69,20 +95,16 @@
           class="avatar"
           alt="Generated Image"
           src="../api/_images/avatar.jpg"
-          width="350"
+          width="300"
         />
       </div>
-      <p class="new-blog-post">
-        New blog post
-        <img
-          class="tada"
-          alt="Party popper"
-          src="../api/_images/tada.png"
-          width="30"
-        />
-      </p>
+      <p class="meta">SEPTEMBER 17, 2019 • 2 MIN READ</p>
       <div class="heading">
         My blog post title
+      </div>
+      <p class="description">An easy way to find out current MRR of your Shopify app.</p>
+      <div class="tags-container">
+        <span class="tag">Ruby on Rails</span>
       </div>
     </div>
   </body>
