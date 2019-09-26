@@ -73,7 +73,7 @@ function getCss() {
     }
 
     .site-title {
-      font-size: 32px;
+      font-size: 40px;
       font-weight: 700;
       margin: 0;
       text-transform: uppercase;
@@ -97,9 +97,8 @@ function getCss() {
     }
 
     .tag {
-      font-size: 26px;
+      font-size: 30px;
       color: white;
-      text-shadow: 1px 1px 2px #033346;
       text-transform: uppercase;
       background: #4cc2f1;
       padding: 11px 18px;
