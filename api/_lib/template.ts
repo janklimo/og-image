@@ -49,7 +49,7 @@ function getCss() {
 
     .avatar {
       border-radius: 50%;
-      margin: 0.5rem auto 2rem;
+      margin: 0.5rem auto 3.5rem;
     }
 
     .wrapper {
@@ -63,6 +63,9 @@ function getCss() {
       text-align: left;
       color: #424242;
       line-height: 1.8;
+      margin: 0;
+      padding-bottom: 14px;
+      border-bottom: 1px dotted #f75175;
     }
 
     .site-title-wrapper {
@@ -70,7 +73,7 @@ function getCss() {
     }
 
     .site-title {
-      font-size: 30px;
+      font-size: 32px;
       font-weight: 700;
       margin: 0;
       text-transform: uppercase;
@@ -80,30 +83,23 @@ function getCss() {
     }
 
     .meta {
+      font-size: 26px;
+      text-shadow: 1px 1px #14141599;
       text-align: left;
       text-transform: uppercase;
       color: #f75175;
-      font-size: 24px;
       margin: 0;
-    }
-
-    .description {
-      text-align: left;
-      color: #5d5d5d;
-      font-size: 30px;
-      margin: 14px 0;
-      padding-bottom: 40px;
-      border-bottom: 1px dotted #f75175;
     }
 
     .tags-container {
       text-align: left;
-      padding: 30px 0;
+      padding: 35px 0;
     }
 
     .tag {
       font-size: 26px;
       color: white;
+      text-shadow: 2px 2px black;
       text-transform: uppercase;
       background: #4cc2f1;
       padding: 11px 18px;
@@ -114,7 +110,7 @@ function getCss() {
 }
 
 export function getHtml(parsedReq: ParsedRequest) {
-  const { text, description, tags, time, date } = parsedReq;
+  const { text, tags, time, date } = parsedReq;
 
   return `<!DOCTYPE html>
 <html>
@@ -133,8 +129,7 @@ export function getHtml(parsedReq: ParsedRequest) {
           ${getImage()}
         </div>
         <p class="meta">${date} • ${time} MIN READ</p>
-        <div class="heading">${sanitizeHtml(text)}</div>
-        <p class="description">${sanitizeHtml(description)}</p>
+        <h1 class="heading">${sanitizeHtml(text)}</h1>
         ${renderTags(tags)}
       </div>
     </body>
@@ -145,7 +140,7 @@ const getImage = () =>
   `<img class="avatar"
         alt="Generated Image"
         src="data:image/jpeg;charset=utf-8;base64,${avatar}"
-        width="200" />`;
+        width="220" />`;
 
 const renderTags = (tags: string[]) => {
   return `<div class="tags-container">
