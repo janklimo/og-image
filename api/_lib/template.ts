@@ -99,7 +99,7 @@ function getCss() {
     .tag {
       font-size: 26px;
       color: white;
-      text-shadow: 2px 2px black;
+      text-shadow: 1px 1px 2px #033346;
       text-transform: uppercase;
       background: #4cc2f1;
       padding: 11px 18px;
