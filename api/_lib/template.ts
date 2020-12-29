@@ -62,7 +62,7 @@ function getCss() {
       font-weight: 700;
       text-align: left;
       color: #424242;
-      line-height: 1.8;
+      line-height: 1.25;
       margin: 0;
       padding-bottom: 14px;
       border-bottom: 1px dotted #f75175;
@@ -143,6 +143,6 @@ const getImage = () =>
 
 const renderTags = (tags: string[]) => {
   return `<div class="tags-container">
-            ${tags.map(tag => `<span class="tag">${tag}</span>`).join("")}
+            ${tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}
           </div>`;
 };
